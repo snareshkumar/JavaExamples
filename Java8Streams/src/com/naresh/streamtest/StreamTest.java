@@ -15,7 +15,7 @@ public class StreamTest {
 		// Stream Test - Get Only Ages which is greater than 30 - Output list only has
 		// ages which is greater than 30
 		// Here Map is the stream function which is only getting age value and condition
-		// given in the stream filter
+		// given in the stream filter - Example Follows
 
 		List<Integer> result = persons.stream().map(p -> p.getAge()).filter(p -> p.intValue() > 30)
 				.collect(Collectors.toList());
