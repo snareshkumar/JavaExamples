@@ -27,7 +27,28 @@ public class StreamTest {
 		List<String> firstNames = persons1.entrySet().stream().map(p -> p.getValue().getPersonFirstName())
 				.filter(p -> p.equalsIgnoreCase("jahnavi")).collect(Collectors.toList());
 		System.out.println("firstNames:::" + firstNames);
-
+		
+		// Get First Name from List using map and filter
+		
+		String name = persons.stream().
+				filter(obj->obj.getPersonLastName().equalsIgnoreCase("Kumar")).
+				map(Person::getPersonLastName).findAny().orElse(null);
+		System.out.println("Name value is:::"+name);
+		
+		// Convert Person Object to TestPerson Object using Map
+		
+		List<TestPerson> testPersons = persons.stream().map(object -> {
+			TestPerson testPerson = new TestPerson();
+			testPerson.setPersonId(object.getPersonId());
+			testPerson.setPersonFirstName(object.getPersonFirstName());
+			testPerson.setPersonLastName(object.getPersonLastName());
+			return testPerson;
+		}).collect(Collectors.toList());
+		
+		// Iterate only firstname using forEach in Java 8
+		testPersons.stream().map(
+			TestPerson::getPersonFirstName
+		).forEach(System.out::println);
 	}
 
 }
