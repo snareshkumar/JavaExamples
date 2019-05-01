@@ -42,6 +42,7 @@ public class ForEachTest {
 			
 		});
 		
+		// Reusing the code - Implementation separated from the functionality - with same data structure input 
 		MyConsumer consumer = new MyConsumer();
 		copyNumbers.forEach(consumer);
 
@@ -51,7 +52,7 @@ public class ForEachTest {
 	
 
 }
-
+// You can reuse this method implementation when multiple times iterating the same structure
 class MyConsumer implements Consumer<Integer>
 {
 
