@@ -11,7 +11,8 @@ public class MapExamaple {
 		hashMap.put("key2","value2");
 		hashMap.put("key3","value3");
 		hashMap.put("key1","value4");
-		System.out.println("Hash Map values are::::"+hashMap.get("key1"));
+		hashMap.put(null,"value");
+		System.out.println("Hash Map values are::::"+hashMap.get(null));
 	}
 
 }
